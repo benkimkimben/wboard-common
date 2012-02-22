@@ -1,11 +1,13 @@
 package com.wboard.common;
 
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
+import org.apache.hadoop.io.Writable;
 
-public interface WObject extends Serializable, Comparable<WObject> {
+/**
+ * Child of hadoop writable interface
+ * @author SKCCADMIN
+ *
+ */
+public interface WObject extends Writable, Comparable<WObject> {
 	
 	/**
 	 * Return this object id
@@ -13,18 +15,4 @@ public interface WObject extends Serializable, Comparable<WObject> {
 	 */
 	public long getOid();
 
-	/**
-	 * Perform the default de-serialization first
-	 * @param in
-	 * @throws ClassNotFoundException
-	 * @throws IOException
-	 */
-	public void readObject(ObjectInputStream in) throws ClassNotFoundException, IOException;
-	
-	/**
-	 * Perform the default serialization for all non-transient, non-static fields
-	 * @param out
-	 * @throws IOException
-	 */
-	public void writeObject(ObjectOutputStream out) throws IOException;
 }
