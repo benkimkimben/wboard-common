@@ -28,7 +28,7 @@ import com.wboard.common.model.DrawableObject;
  * @author Ben Kim
  * @see org.apache.hadoop.hbase.ipc.HRegionInterface
  */
-public interface ClientProtocol extends VersionedProtocol {
+public interface ServerProtocol extends VersionedProtocol {
 
 	public static final long versionID = 100L;
 	
