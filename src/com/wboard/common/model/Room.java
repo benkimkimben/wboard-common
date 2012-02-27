@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class Room {
 	protected int id;
 	protected String title;
-	protected ArrayList<User> uList;
+	protected ArrayList<WUser> uList;
 	
 	public static final int FREE = 0;
 	public static final int CONFERENCE = 1;
@@ -15,7 +15,7 @@ public class Room {
 	public Room(){
 		this.id = -1;
 		this.title = "";
-		uList = new ArrayList<User>();
+		uList = new ArrayList<WUser>();
 	}
 	public Room(String title) {
 		this();
@@ -38,7 +38,7 @@ public class Room {
 		this.title = title;
 	}
 	
-	public boolean addUser(User u){
+	public boolean addUser(WUser u){
 		if(uList.add(u))
 			return true;
 		else 
@@ -51,7 +51,7 @@ public class Room {
 	 * @return
 	 */
 	public boolean removeUser(int uid){
-		for(User u: uList){
+		for(WUser u: uList){
 			if(u.getId() == uid){
 				uList.remove(u);
 				return true;
@@ -66,7 +66,7 @@ public class Room {
 	 * @return
 	 */
 	public boolean hasUser(int uid){
-		for(User u: uList){
+		for(WUser u: uList){
 			if(u.getId() == uid){
 				return true;
 			}
